@@ -31,7 +31,7 @@ const Navbar = () => {
                         
 
 
-                        <li><a href="#portal" className="text-darkCharcoal text-base">Conference</a></li>
+                        <li><a href="/conference" className="text-darkCharcoal text-base">Conference</a></li>
                         <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdR7yZDcKB87xumPFnOirR8bKJJzDVyEh9d52u6u0K4hCqtcQ/viewform?pli=1" className="text-white text-base font-medium bg-turquoiseBlue rounded-full px-4 py-2">Register</a></li>
                     </ul>
                 </nav>
