@@ -69,7 +69,7 @@ function Footer() {
 
             </div>
             <div className="container mx-auto text-center mt-10">
-                <p className='text-lightGray font-manrope font-normal text-sm'>Copyright @ Digital OneHealth Surveillance by WWRG 2024</p>
+                <p className='text-lightGray font-manrope font-normal text-sm'>Copyright @ WWRG 2024</p>
             </div>
         </footer>
     );
