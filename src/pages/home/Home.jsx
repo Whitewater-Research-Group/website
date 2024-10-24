@@ -83,7 +83,7 @@ function Home() {
             </a>
           </div>
 
-          <div>
+          <div className="">
             <Countdown timeLeft={countdown} />
           </div>
         </div>
