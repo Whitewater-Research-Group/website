@@ -17,7 +17,7 @@ function ConferencePage() {
 
   // Function to calculate time remaining until November 5, 2024
   const countdownToNov5 = () => {
-    const targetDate = new Date("November 5, 2024 00:00:00").getTime();
+    const targetDate = new Date("December 5, 2024 00:00:00").getTime();
     const now = Date.now();
     const timeRemaining = targetDate - now;
 
