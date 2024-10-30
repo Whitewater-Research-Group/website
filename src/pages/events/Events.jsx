@@ -7,7 +7,7 @@ import BackgroundImage from "../../assets/hero.png";
 import AboutImage from "../../assets/about.png";
 import Countdown from "../../components/Countdown";
 
-function Home() {
+function Events() {
   const [countdown, setCountdown] = useState({
     days: 0,
     hours: 0,
@@ -242,4 +242,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Events;

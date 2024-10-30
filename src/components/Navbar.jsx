@@ -26,12 +26,13 @@ const Navbar = () => {
                     <ul className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-8">
                         <li><NavLink to="/" className={({ isActive }) => navLinkClass(isActive, "text-darkCharcoal text-base")}>Home</NavLink></li>
                         <li><NavLink to="/about" className={({ isActive }) => navLinkClass(isActive, "text-darkCharcoal text-base")}>About</NavLink></li>
+                        <li><NavLink to="/events" className={({ isActive }) => navLinkClass(isActive, "text-darkCharcoal text-base")}>Events</NavLink></li>
                         
 
                         
 
 
-                        <li><a href="/conference" className="text-darkCharcoal text-base">Conference</a></li>
+                        {/* <li><a href="/conference" className="text-darkCharcoal text-base">Conference</a></li> */}
                         <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdR7yZDcKB87xumPFnOirR8bKJJzDVyEh9d52u6u0K4hCqtcQ/viewform?pli=1" className="text-white text-base font-medium bg-turquoiseBlue rounded-full px-4 py-2">Register</a></li>
                     </ul>
                 </nav>
