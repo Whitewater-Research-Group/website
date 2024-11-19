@@ -37,6 +37,7 @@ export default {
         'red': '#ffbaba42',
         'wine': '#d8000c',
         'danger': '#FF0000',
+        primary: '#1ba9b5',
       },
     },
   },
