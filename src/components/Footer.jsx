@@ -106,42 +106,7 @@ const Footer = () => {
 
           {/* Navigation Links - Spans 8 columns on large screens */}
           <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Overview Section */}
-            <div className="relative">
-              <h4 className="text-xl font-manrope font-bold mb-6 flex items-center gap-2" style={{ color: brandColor }}>
-                Overview
-                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke={brandColor} strokeWidth="2">
-                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-                </svg>
-              </h4>
-              <ul className="text-gray-300 font-manrope text-sm space-y-2">
-                <li>
-                  <a href="#report" className="hover:text-white transition-colors duration-200 flex items-center gap-2">
-                    <span className="w-1 h-1 rounded-full" style={{ backgroundColor: brandColor }}></span>
-                    Report Generation
-                  </a>
-                </li>
-                <li>
-                  <a href="#map" className="hover:text-white transition-colors duration-200 flex items-center gap-2">
-                    <span className="w-1 h-1 rounded-full" style={{ backgroundColor: brandColor }}></span>
-                    Surveillance Map
-                  </a>
-                </li>
-                <li>
-                  <a href="#assistance" className="hover:text-white transition-colors duration-200 flex items-center gap-2">
-                    <span className="w-1 h-1 rounded-full" style={{ backgroundColor: brandColor }}></span>
-                    AI Assistance
-                  </a>
-                </li>
-                <li>
-                  <a href="#analytics" className="hover:text-white transition-colors duration-200 flex items-center gap-2">
-                    <span className="w-1 h-1 rounded-full" style={{ backgroundColor: brandColor }}></span>
-                    Analytics
-                  </a>
-                </li>
-              </ul>
-            </div>
-
+       
             {/* Company Section */}
             <div className="relative">
               <h4 className="text-xl font-manrope font-bold mb-6 flex items-center gap-2" style={{ color: brandColor }}>
@@ -186,7 +151,7 @@ const Footer = () => {
                     <svg className="w-4 h-4" fill="none" stroke={brandColor} viewBox="0 0 24 24" strokeWidth="2">
                       <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1.497 4.493a1 1 0 01-.272 1.048l-2.3 2.3a16.023 16.023 0 006.586 6.586l2.3-2.3a1 1 0 011.048-.272l4.493 1.498a1 1 0 01.684.948V19a2 2 0 01-2 2h-1c-9.374 0-17-7.626-17-17V5z" />
                     </svg>
-                    <span>+234 123 456 7890</span>
+                    <span>+234 802 291 8109</span>
                   </div>
                 </a>
                 <a href="mailto:info@wwrg.org" className="block hover:text-white transition-colors duration-200">
@@ -194,7 +159,7 @@ const Footer = () => {
                     <svg className="w-4 h-4" fill="none" stroke={brandColor} viewBox="0 0 24 24" strokeWidth="2">
                       <path d="M16 12l4-4m0 0l-4-4m4 4H4m0 0l4 4m-4-4l4-4" />
                     </svg>
-                    <span>info@wwrg.org</span>
+                    <span>eddie.olaye@gmail.com</span>
                   </div>
                 </a>
                 <p className="flex items-center gap-2">

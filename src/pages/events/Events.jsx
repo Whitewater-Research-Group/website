@@ -2,11 +2,7 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
-import Calender from "../../assets/calender.png";
-import BackgroundImage from "../../assets/hero.png";
-import AboutImage from "../../assets/about.png";
-import Countdown from "../../components/Countdown";
-
+import BackgroundImage from "../../assets/Pics/1.jpg";
 
 const EventCard = ({ date, title, location, description }) => (
   <div className="bg-white rounded-lg shadow-md p-6 hover:shadow-xl transition-shadow">
@@ -40,13 +36,8 @@ function Events() {
       title: "One-Health Stakeholders Engagement Meeting",
       location: "WWRG AI-LAB( Live + Virtual)",
       description: "Join us for an engaging conference dedicated to advancing the One Health approach"
-    },
-    {
-      date: { day: "TBD", month: "" },
-      title: "Water Conservation Workshop",
-      location: "Environmental Research Lab",
-      description: "A hands-on workshop focused on innovative water conservation techniques and sustainable practices."
-    },
+    }
+   
    
   ];
 
@@ -56,13 +47,32 @@ function Events() {
 
     <Navbar />
     <div className="min-h-screen bg-gray-50">
-      {/* Hero Section with Registration Form */}
-      <div className="bg-gradient-to-b from-[#dd6952] to-[#CD5E49] py-16">
-        <div className="container mx-auto px-4">
+    <div className="container mx-auto px-4 py-16">
+        <h2 className="text-3xl font-bold text-gray-800 mb-8">Upcoming Events</h2>
+        <a href="/conference">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {upcomingEvents.map((event, index) => (
+            <EventCard key={index} {...event} />
+          ))}
+        </div>
+        </a>
+        
+        
+      </div>
+      
+      <div className=" relative bg-gradient-to-b from-[#dd6952] to-[#CD5E49] py-16">
+      <div className="absolute inset-0">
+        <div 
+          className="absolute inset-0 bg-cover bg-center transform "
+          style={{ backgroundImage: `url(${BackgroundImage})` }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#dd6952]/70 via-[#CD5E49]/60 to-[#CD5E49]/90" />
+      </div>
+        <div className="relative container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left side - Event Info */}
             <div className="text-white">
-              <h1 className="text-4xl font-bold mb-6">White Water Research Group Events</h1>
+              <h1 className="text-5xl font-extrabold mb-6">White Water Research Group Events</h1>
               <p className="text-xl mb-8">Join us for groundbreaking research presentations, workshops, and networking opportunities.</p>
               <div className="bg-white/10 rounded-lg p-6 backdrop-blur-sm">
                 <h2 className="text-2xl font-semibold mb-4">Why Attend?</h2>
@@ -138,16 +148,6 @@ function Events() {
               </form>
             </div>
           </div>
-        </div>
-      </div>
-
-    
-      <div className="container mx-auto px-4 py-16">
-        <h2 className="text-3xl font-bold text-gray-800 mb-8">Upcoming Events</h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {upcomingEvents.map((event, index) => (
-            <EventCard key={index} {...event} />
-          ))}
         </div>
       </div>
 

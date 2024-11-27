@@ -19,6 +19,7 @@ function App() {
         <Route path='/events' element={<EventsPage />} />
         <Route path='/about' element={<About />} />
         
+        
       </Routes>
     </Router>
   )

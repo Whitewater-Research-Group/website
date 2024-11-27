@@ -54,14 +54,14 @@ function ConferencePage() {
     <div className="">
       <Navbar />
       <section
-        className="relative w-full h-screen flex flex-col justify-center p-8 lg:p-16 mt-20 bg-cover bg-center bg-no-repeat"
+        className="relative w-full h-screen flex flex-col justify-center p-8 lg:p-16  bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${BackgroundImage})` }}
       >
         {/* Dark overlay */}
         <div className="absolute inset-0 bg-black bg-opacity-50"></div>
 
         {/* Content container */}
-        <div className="relative z-10 space-y-6 text-center lg:text-left">
+        <div className="relative z-10 space-y-6 mt-8 text-center lg:text-left">
           <h1 className="text-white font-primary font-extrabold text-4xl lg:text-6xl">
             One-Health <br /> Stakeholders <br /> Engagement <br /> Meeting
           </h1>
