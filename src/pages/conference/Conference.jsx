@@ -74,7 +74,7 @@ function ConferencePage() {
 
           <div className="flex flex-col lg:flex-row items-center space-y-4 lg:space-y-0 lg:space-x-4">
             <img src={Calender} alt="Event Calendar" className="h-10 w-10" />
-            <span className="text-white text-lg">5th November 2024</span>
+            <span className="text-white text-lg">5th December 2024</span>
             <a
               href="https://docs.google.com/forms/d/e/1FAIpQLSdR7yZDcKB87xumPFnOirR8bKJJzDVyEh9d52u6u0K4hCqtcQ/viewform?pli=1"
               className="text-white text-base font-medium bg-turquoiseBlue rounded-full px-4 py-2"

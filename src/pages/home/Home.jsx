@@ -21,7 +21,7 @@ function Home() {
           className="absolute inset-0 bg-cover bg-center transform scale-105 animate-subtle-zoom"
           style={{ backgroundImage: `url(${BackgroundImage})` }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/60" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/60 to-black/60" />
       </div>
 
       {/* Content Container */}
@@ -45,7 +45,7 @@ function Home() {
               </h1>
 
               <p className="text-lg md:text-xl text-gray-200 leading-relaxed animate-fade-in-up [animation-delay:400ms]">
-                The White Water Research Group is a Nigeria-based collective of
+                The White Water Research Group is a Nigerian-based collective of
                 passionate innovators and problem-solvers dedicated to addressing
                 real-world challenges across various aspects of life.
               </p>

@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import React, { useState, useEffect } from "react";
+import { NavLink } from "react-router-dom";
+import { Menu, X } from "lucide-react";
 import Logo from "../assets/logo2.png";
 
 const Navbar = () => {
@@ -12,40 +12,45 @@ const Navbar = () => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   // Handle mobile menu
   const toggleMenu = () => {
     setIsOpen(!isOpen);
     // Prevent body scroll when menu is open
-    document.body.style.overflow = !isOpen ? 'hidden' : 'unset';
+    document.body.style.overflow = !isOpen ? "hidden" : "unset";
   };
 
   const closeMenu = () => {
     setIsOpen(false);
-    document.body.style.overflow = 'unset';
+    document.body.style.overflow = "unset";
   };
 
   const navLinks = [
-    { path: '/', label: 'Home' },
-    { path: '/about', label: 'About' },
-    { path: '/events', label: 'Events' }
+    { path: "/", label: "Home" },
+    { path: "/about", label: "About" },
+    { path: "/events", label: "Events" },
+    { path: "/sft2024", label: "SFT 2024" },
+
   ];
 
   return (
-    <header 
+    <header
       className={`left-0 w-full z-50 transition-all duration-300 
-      ${scrolled ? 'bg-white/95 backdrop-blur-sm shadow-md' : 'bg-white'}
-      ${isOpen ? 'bg-white' : ''}`}
+      ${scrolled ? "bg-white/95 backdrop-blur-sm shadow-md" : "bg-white"}
+      ${isOpen ? "bg-white" : ""}`}
     >
       <div className="container mx-auto px-4 py-4 max-w-screen-xl">
         <nav className="flex items-center justify-between">
           {/* Logo */}
+          <NavLink to='/'>
           <div className="flex items-center space-x-2">
-  <img src={Logo} alt="Logo" className="h-14 md:h-18 lg:h-24" />
-</div>
+            <img src={Logo} alt="Logo" className="h-14 md:h-18 lg:h-24" />
+          </div>
+          </NavLink>
+          
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
@@ -55,15 +60,19 @@ const Navbar = () => {
                 to={path}
                 className={({ isActive }) =>
                   `text-base transition-colors duration-200 hover:text-steelBlue
-                  ${isActive ? 'text-steelBlue font-semibold' : 'text-darkCharcoal'}`
+                  ${
+                    isActive
+                      ? "text-steelBlue font-semibold"
+                      : "text-darkCharcoal"
+                  }`
                 }
               >
                 {label}
               </NavLink>
             ))}
             <a
-              href="https://docs.google.com/forms/d/e/1FAIpQLSdR7yZDcKB87xumPFnOirR8bKJJzDVyEh9d52u6u0K4hCqtcQ/viewform"
-              className="px-6 py-2 bg-turquoiseBlue text-white rounded-full font-medium 
+              href="/contact"
+              className="px-6 py-2 bg-[#CD5E49] text-white rounded-full font-medium 
                 transition-all duration-200 hover:bg-turquoiseBlue/90 hover:shadow-lg"
               target="_blank"
               rel="noopener noreferrer"
@@ -86,9 +95,10 @@ const Navbar = () => {
           </button>
 
           {/* Mobile Menu */}
+
           <div
             className={`fixed inset-0 bg-white lg:hidden transition-transform duration-300 ease-in-out ${
-              isOpen ? 'translate-x-0' : 'translate-x-full'
+              isOpen ? "translate-x-0" : "translate-x-full"
             }`}
           >
             <div className="flex flex-col items-center justify-center h-full space-y-8">
@@ -99,15 +109,19 @@ const Navbar = () => {
                   onClick={closeMenu}
                   className={({ isActive }) =>
                     `text-xl transition-colors duration-200 hover:text-steelBlue
-                    ${isActive ? 'text-steelBlue font-semibold' : 'text-darkCharcoal'}`
+                    ${
+                      isActive
+                        ? "text-steelBlue font-semibold"
+                        : "text-darkCharcoal"
+                    }`
                   }
                 >
                   {label}
                 </NavLink>
               ))}
               <a
-                href="https://docs.google.com/forms/d/e/1FAIpQLSdR7yZDcKB87xumPFnOirR8bKJJzDVyEh9d52u6u0K4hCqtcQ/viewform"
-                className="px-8 py-3 bg-turquoiseBlue text-white rounded-full font-medium 
+                href="/contact"
+                className="px-8 py-3 bg-[#CD5E49] text-white rounded-full font-medium 
                   transition-all duration-200 hover:bg-turquoiseBlue/90 hover:shadow-lg"
                 target="_blank"
                 rel="noopener noreferrer"

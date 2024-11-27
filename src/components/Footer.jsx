@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { Send, CheckCircle, MapPin, Phone, Mail, Clock, Waves } from 'lucide-react';
+
 const Footer = () => {
   const brandColor = '#CD5E49';
   
@@ -47,7 +49,7 @@ const Footer = () => {
 
       <div className="container mx-auto px-6 md:px-12 lg:px-20 relative z-10">
         {/* Main Content */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-28s">
           {/* Company Info - Spans 4 columns on large screens */}
           <div className="lg:col-span-4">
             <div className="relative">
@@ -148,25 +150,24 @@ const Footer = () => {
               <div className="text-gray-300 font-manrope text-sm space-y-4">
                 <a href="tel:+2341234567890" className="block hover:text-white transition-colors duration-200">
                   <div className="flex items-center gap-2">
-                    <svg className="w-4 h-4" fill="none" stroke={brandColor} viewBox="0 0 24 24" strokeWidth="2">
-                      <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1.497 4.493a1 1 0 01-.272 1.048l-2.3 2.3a16.023 16.023 0 006.586 6.586l2.3-2.3a1 1 0 011.048-.272l4.493 1.498a1 1 0 01.684.948V19a2 2 0 01-2 2h-1c-9.374 0-17-7.626-17-17V5z" />
-                    </svg>
+                    
+                  <Phone className="text-[#CD5E49] mt-1" />
                     <span>+234 802 291 8109</span>
                   </div>
                 </a>
                 <a href="mailto:info@wwrg.org" className="block hover:text-white transition-colors duration-200">
                   <div className="flex items-center gap-2">
-                    <svg className="w-4 h-4" fill="none" stroke={brandColor} viewBox="0 0 24 24" strokeWidth="2">
-                      <path d="M16 12l4-4m0 0l-4-4m4 4H4m0 0l4 4m-4-4l4-4" />
-                    </svg>
+                    
+                  <Mail className="text-[#CD5E49] mt-1" />
                     <span>eddie.olaye@gmail.com</span>
                   </div>
                 </a>
                 <p className="flex items-center gap-2">
-                  <svg className="w-4 h-4" fill="none" stroke={brandColor} viewBox="0 0 24 24" strokeWidth="2">
-                    <path d="M8.82 19.012C3.834 18.797 2 15.722 2 12.897V5.103C2 2.278 3.834-.797 8.82-.988m6.36.187c4.986.21 6.82 3.285 6.82 6.11v7.794c0 2.825-1.834 5.901-6.82 6.12" />
-                  </svg>
-                  123 Research Lane, City Name, Country
+                  
+                  <MapPin className="text-[#CD5E49] mt-1" />
+                  Department Of Computer Engineering<br />
+                      University of Benin Ugbowo<br />
+                      Edo State, Nigeria
                 </p>
               </div>
             </div>
