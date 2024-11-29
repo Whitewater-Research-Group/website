@@ -45,9 +45,9 @@ function Home() {
                 </h1>
 
                 <p className="text-lg md:text-xl text-gray-200 leading-relaxed animate-fade-in-up [animation-delay:400ms]">
-                  The White Water Research Group is a Nigerian-based collective
-                  of passionate innovators and problem-solvers dedicated to
-                  addressing real-world challenges across various aspects of
+                  The White Water Research Group is a Nigerian-based team
+                  of passionate innovators and problem-solvers that are commited to
+                  solving real-world challenges across the various aspects of
                   life.
                 </p>
 

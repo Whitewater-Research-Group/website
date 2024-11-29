@@ -4,21 +4,21 @@ const WhyChooseUs = () => {
         id: 1,
         title: "Focused on Real-World Solutions",
         description:
-          "Our research goes beyond theory—every project is designed to address tangible challenges, ensuring our work has meaningful, practical applications.",
+          "Our research goes beyond theory—every project is designed to address real world problems thereby ensuring our work has both meaningful and practical applications.",
         icon: "🌍", // Replace this with an SVG or custom icon if preferred
       },
       {
         id: 2,
         title: "Interdisciplinary Expertise",
         description:
-          "Our diverse team brings together experts from various fields, enabling us to tackle complex problems with innovative, holistic approaches.",
+          "Our diverse team brings together experts from various fields, enabling us to tackle complex problems with innovative and holistic approaches.",
         icon: "🔬", // Replace this with an SVG or custom icon if preferred
       },
       {
         id: 3,
         title: "Commitment to Collaboration",
         description:
-          "We believe in the power of partnerships. Whether working with industry leaders, academic institutions, or local communities, we foster collaboration to achieve shared goals.",
+          "We believe in the power of partnerships. Whether working with industry leaders, academic institutions, or local communities, we prioritize a collaborative environment in order to achieve shared goals.",
         icon: "🤝", // Replace this with an SVG or custom icon if preferred
       },
     ];

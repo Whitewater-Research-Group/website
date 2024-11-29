@@ -61,8 +61,8 @@ const Researches = () => {
         </div>
         
         <p className="mt-4 text-center text-gray-600 text-lg max-w-2xl mx-auto">
-          Discover the impactful projects we've undertaken to address global challenges
-          and shape the future of innovation.
+        Check out the projects that we have worked on for addressing global problems and defining the further evolution of technologies.
+
         </p>
 
         {/* Research Cards */}

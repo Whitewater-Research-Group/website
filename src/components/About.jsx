@@ -26,9 +26,8 @@ const AboutSection = () => {
             <span className="text-[#E07A5F]"> Global Impact</span>
           </h1>
           <p className="mt-6 text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
-            The White Water Research Group is a dynamic team of researchers and innovators 
-            committed to addressing real-world challenges through interdisciplinary exploration 
-            and actionable solutions.
+          The White Water Research Group is a rapidly developing team of people involved in research and development, that is focused on solving practical problems with the help of interdisciplinary studies and application of new knowledge.
+
           </p>
         </div>
 
@@ -41,9 +40,7 @@ const AboutSection = () => {
               </div>
               <h2 className="text-2xl font-bold text-gray-900 mb-4">Our Vision</h2>
               <p className="text-gray-600 leading-relaxed">
-                To be a global leader in transformative research, driving innovative solutions 
-                that create a better, more sustainable world for generations to come.
-              </p>
+              To be a world class research institution that provides knowledge through the development of ideas that will in turn, impact future generations.              </p>
             </div>
           </div>
 
@@ -55,9 +52,9 @@ const AboutSection = () => {
               <h2 className="text-2xl font-bold text-gray-900 mb-4">Our Mission</h2>
               <ul className="space-y-4 text-gray-600">
                 {[
-                  'Conduct cutting-edge research that tackles pressing challenges',
-                  'Translate findings into practical, scalable solutions',
-                  'Inspire and collaborate with global stakeholders'
+                  'Carry out research that seeks to address current issues and questions.',
+                  ' Translate findings into practical, scalable solutions',
+                  'Engage and motivate key stakeholders worldwide'
                 ].map((item, index) => (
                   <li key={index} className="flex items-start">
                     <span className="w-1.5 h-1.5 bg-[#E07A5F] rounded-full mt-2 mr-3 flex-shrink-0" />
@@ -78,7 +75,7 @@ const AboutSection = () => {
               { icon: Target, title: 'Impact', description: 'Focusing on research that delivers tangible, positive outcomes' },
               { icon: Users, title: 'Collaboration', description: 'Building strong networks with local and global partners' },
               { icon: Shield, title: 'Integrity', description: 'Upholding ethical practices in all aspects of our work' },
-              { icon: Leaf, title: 'Sustainability', description: 'Ensuring our solutions are future-focused and environmentally conscious' }
+              { icon: Leaf, title: 'Sustainability', description: 'Ensuring our solutions are futuristic and are environmentally friendly' }
             ].map((value, index) => (
               <CoreValue key={index} {...value} index={index} />
             ))}
