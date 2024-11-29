@@ -48,9 +48,7 @@ const Footer = () => {
       </div>
 
       <div className="container mx-auto px-6 md:px-12 lg:px-20 relative z-10">
-        {/* Main Content */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-28s">
-          {/* Company Info - Spans 4 columns on large screens */}
           <div className="lg:col-span-4">
             <div className="relative">
               <h4 className="font-primary text-4xl font-bold mb-6 relative" style={{ color: brandColor }}>
@@ -105,11 +103,8 @@ const Footer = () => {
               ))}
             </div>
           </div>
-
-          {/* Navigation Links - Spans 8 columns on large screens */}
           <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
        
-            {/* Company Section */}
             <div className="relative">
               <h4 className="text-xl font-manrope font-bold mb-6 flex items-center gap-2" style={{ color: brandColor }}>
                 Company
@@ -138,8 +133,6 @@ const Footer = () => {
                 </li>
               </ul>
             </div>
-
-            {/* Contact Section */}
             <div className="relative">
               <h4 className="text-xl font-manrope font-bold mb-6 flex items-center gap-2" style={{ color: brandColor }}>
                 Contact Us
@@ -174,8 +167,6 @@ const Footer = () => {
           </div>
         </div>
       </div>
-
-      {/* Footer Bottom */}
       <div className="border-t border-gray-700 mt-12 pt-6">
         <div className="container mx-auto px-6 md:px-12 lg:px-20 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <p className="text-gray-500 text-sm text-center md:text-left">

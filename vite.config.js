@@ -5,9 +5,17 @@ import path from 'path';
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  resolve: {
-    alias: {
-      '@': path.resolve(__dirname, 'src')
+  base: '/', // This ensures proper path resolution
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
+    rollupOptions: {
+      output: {
+        manualChunks: undefined
+      }
     }
+  },
+  server: {
+    historyApiFallback: true // Enable HTML5 history API fallback
   }
 });

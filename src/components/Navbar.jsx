@@ -42,7 +42,7 @@ const Navbar = () => {
       ${scrolled ? "bg-white/95 backdrop-blur-sm shadow-md" : "bg-white"}
       ${isOpen ? "bg-white" : ""}`}
     >
-      <div className="container mx-auto px-4 py-4 max-w-screen-xl">
+      <div className="container mx-auto px-4 max-w-screen-xl">
         <nav className="flex items-center justify-between">
           {/* Logo */}
           <NavLink to='/'>
@@ -97,7 +97,7 @@ const Navbar = () => {
           {/* Mobile Menu */}
 
           <div
-            className={`fixed inset-0 bg-white lg:hidden transition-transform duration-300 ease-in-out ${
+            className={`fixed inset-0 bg-white lg:hidden z-30 transition-transform duration-300 ease-in-out ${
               isOpen ? "translate-x-0" : "translate-x-full"
             }`}
           >
