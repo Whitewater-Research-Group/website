@@ -15,9 +15,8 @@ function ConferencePage() {
     seconds: 0,
   });
 
-  // Function to calculate time remaining until November 5, 2024
   const countdownToNov5 = () => {
-    const targetDate = new Date("December 5, 2024 00:00:00").getTime();
+    const targetDate = new Date("December 5, 2024 10:00:00").getTime();
     const now = Date.now();
     const timeRemaining = targetDate - now;
 
@@ -54,14 +53,14 @@ function ConferencePage() {
     <div className="">
       <Navbar />
       <section
-        className="relative w-full h-screen flex flex-col justify-center p-8 lg:p-16  bg-cover bg-center bg-no-repeat"
+        className="relative w-full h-fit flex flex-col justify-center p-8 lg:p-16  bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${BackgroundImage})` }}
       >
         {/* Dark overlay */}
         <div className="absolute inset-0 bg-black bg-opacity-50"></div>
 
         {/* Content container */}
-        <div className="relative z-10 space-y-6 mt-8 text-center lg:text-left">
+        <div className="relative z-10 space-y-6 mt-30 text-center lg:text-left">
           <h1 className="text-white font-primary font-extrabold text-4xl lg:text-6xl">
             One-Health <br /> Stakeholders <br /> Engagement <br /> Meeting
           </h1>
@@ -76,10 +75,10 @@ function ConferencePage() {
             <img src={Calender} alt="Event Calendar" className="h-10 w-10" />
             <span className="text-white text-lg">5th December 2024</span>
             <a
-              href="https://docs.google.com/forms/d/e/1FAIpQLSdR7yZDcKB87xumPFnOirR8bKJJzDVyEh9d52u6u0K4hCqtcQ/viewform?pli=1"
+              href="/sft2024/join"
               className="text-white text-base font-medium bg-turquoiseBlue rounded-full px-4 py-2"
             >
-              Register
+              Join
             </a>
           </div>
 
@@ -88,6 +87,7 @@ function ConferencePage() {
           </div>
         </div>
       </section>
+
 
       <section className="py-16 px-4 lg:px-16">
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-center">

@@ -6,7 +6,8 @@ import ConferencePage from './pages/conference/Conference';
 import About from './pages/about/About';
 import ContactPage from './pages/contact/Contact';
 import PersonalizedInvitation from './components/Invitation';
-
+import AcademicProfile from './components/researchers/eddie';
+import StakeholderMeeting from './components/meeting/Join';
 import './App.css';
 
 function App() {
@@ -21,6 +22,8 @@ function App() {
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/letter" element={<PersonalizedInvitation />} />
         <Route path="*" element={<Navigate to="/" replace />} />
+        <Route path="/researchers/eddie" element={<AcademicProfile />} />
+        <Route path="/sft2024/join" element={<StakeholderMeeting />} />
       </Routes>
     </Router>
   )

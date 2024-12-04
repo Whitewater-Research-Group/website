@@ -18,7 +18,7 @@ function About() {
         bio: "Leading research initiatives in healthcare innovation with over 15 years of experience.",
         email: "e.olaye@example.com",
         twitter: "@DrOlaye",
-        website: "example.com/dr-olaye"
+        website: "/researchers/eddie"
       },
       {
         id: 2,
@@ -125,6 +125,7 @@ function About() {
               onMouseEnter={() => setHoveredId(researcher.id)}
               onMouseLeave={() => setHoveredId(null)}
             >
+           
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10" />
                 <img
@@ -140,6 +141,7 @@ function About() {
               </div>
 
               <div className="p-6">
+
                 <h3 className="text-xl font-semibold text-gray-800 group-hover:text-[#E07A5F] 
                   transition-colors duration-300">
                   {researcher.name}
@@ -156,7 +158,7 @@ function About() {
                      className="text-gray-600 hover:text-[#E07A5F] transition-colors">
                     <Twitter className="w-5 h-5" />
                   </a>
-                  <a href={`https://${researcher.website}`} 
+                  <a href={`${researcher.website}`} 
                      className="text-gray-600 hover:text-[#E07A5F] transition-colors">
                     <Link2 className="w-5 h-5" />
                   </a>
