@@ -12,13 +12,29 @@ const EventCard = ({ date, title, location, description }) => (
       <div className="flex flex-col items-center justify-center bg-[#CD5E49] text-white rounded-lg p-3 min-w-[80px]">
         <span className="text-2xl font-bold">{date.day}</span>
         <span className="text-sm uppercase">{date.month}</span>
+        <span className="text-xl font-bold uppercase">{date.year}</span>
       </div>
       <div className="flex-1">
         <h3 className="text-xl font-bold text-gray-800 mb-2">{title}</h3>
         <p className="text-gray-600 mb-2 flex items-center">
-          <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+          <svg
+            className="w-4 h-4 mr-2"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+            />
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+            />
           </svg>
           {location}
         </p>
@@ -28,21 +44,23 @@ const EventCard = ({ date, title, location, description }) => (
   </div>
 );
 
-
-
 function Events() {
-
-
-
   const upcomingEvents = [
+    // {
+    //   date: { day: "05", month: "Dec" },
+    //   title: "One-Health Stakeholders Engagement Meeting",
+    //   location: "WWRG AI-LAB( Live + Virtual)",
+    //   description: "Join us for an engaging conference dedicated to advancing the One Health approach"
+    // }
+  ];
+
+  const previousEvents = [
     {
-      date: { day: "05", month: "Dec" },
+      date: { day: "05", month: "Dec", year: "2024" },
       title: "One-Health Stakeholders Engagement Meeting",
       location: "WWRG AI-LAB( Live + Virtual)",
-      description: "Join us for an engaging conference dedicated to advancing the One Health approach"
-    }
-   
-   
+      description: "Read about Decisions Taken at Stakeholders Meeting",
+    },
   ];
 
   const [formData, setFormData] = useState({
@@ -61,7 +79,12 @@ function Events() {
   // Handle button click
   const handleDownload = () => {
     // Basic validation
-    if (!formData.recieversName || !formData.recieversAddress || !formData.recieversCity || !formData.recieversTitle) {
+    if (
+      !formData.recieversName ||
+      !formData.recieversAddress ||
+      !formData.recieversCity ||
+      !formData.recieversTitle
+    ) {
       alert("Please fill out all fields before downloading the letter.");
       return;
     }
@@ -371,7 +394,9 @@ body {padding:0; margin:0; text-align:center; background-color:#777}
          id="text128"><tspan
            x="0"
            y="0"
-           id="tspan126">${formData.recieversName.toString().toUpperCase()}</tspan></text>
+           id="tspan126">${formData.recieversName
+             .toString()
+             .toUpperCase()}</tspan></text>
     </g>
     <g
        id="g130"
@@ -383,7 +408,9 @@ body {padding:0; margin:0; text-align:center; background-color:#777}
          id="text134"><tspan
            x="0"
            y="0"
-           id="tspan132">${formData.recieversAddress.toString().toLocaleUpperCase()}</tspan></text>
+           id="tspan132">${formData.recieversAddress
+             .toString()
+             .toLocaleUpperCase()}</tspan></text>
     </g>
     <g
        id="g136"
@@ -395,7 +422,9 @@ body {padding:0; margin:0; text-align:center; background-color:#777}
          id="text140"><tspan
            x="0"
            y="0"
-           id="tspan138">${formData.recieversCity.toString().toUpperCase()}</tspan></text>
+           id="tspan138">${formData.recieversCity
+             .toString()
+             .toUpperCase()}</tspan></text>
     </g>
     <g
        id="g142"
@@ -2086,190 +2115,246 @@ body {padding:0; margin:0; text-align:center; background-color:#777}
 
   
       `;
-  
+
       // Create a temporary container for the HTML
-      const tempDiv = document.createElement('div');
+      const tempDiv = document.createElement("div");
       tempDiv.innerHTML = htmlContent;
-      tempDiv.style.position = 'absolute';
-      tempDiv.style.top = '-10000px'; // Move it off-screen
+      tempDiv.style.position = "absolute";
+      tempDiv.style.top = "-10000px"; // Move it off-screen
       document.body.appendChild(tempDiv);
-  
+
       try {
         // Convert the HTML content to a canvas
         const canvas = await html2canvas(tempDiv, { scale: 2 });
-        const imgData = canvas.toDataURL('image/jpeg', 0.6);
-  
+        const imgData = canvas.toDataURL("image/jpeg", 0.6);
+
         // Create a PDF instance
         const pdf = new jsPDF({
-          orientation: 'portrait',
-          unit: 'mm',
-          format: 'a4',
+          orientation: "portrait",
+          unit: "mm",
+          format: "a4",
         });
-  
+
         const pdfWidth = 210; // A4 width in mm
         const pdfHeight = (canvas.height * pdfWidth) / canvas.width; // Maintain aspect ratio
-  
+
         // Add the image to the PDF
-        pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
-  
+        pdf.addImage(imgData, "PNG", 0, 0, pdfWidth, pdfHeight);
+
         // Save the PDF
-        pdf.save('document.pdf');
+        pdf.save("document.pdf");
       } catch (error) {
-        console.error('Error generating PDF:', error);
-      } 
-    
+        console.error("Error generating PDF:", error);
+      }
+    };
+
+    handleDownloadPDF();
   };
 
-  handleDownloadPDF();
-
-    
-  };
-
- 
   return (
     <>
+      <Navbar />
+      <div className="min-h-screen bg-gray-50">
+      <div className="container mx-auto px-4 py-16">
 
-    <Navbar />
-    <div className="min-h-screen bg-gray-50">
-    <div className="container mx-auto px-4 py-16">
-        <h2 className="text-3xl font-bold text-gray-800 mb-8">Upcoming Events</h2>
-        <a href="/conference">
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {upcomingEvents.map((event, index) => (
-            <EventCard key={index} {...event} />
-          ))}
-        </div>
+  <section className="my-20">
+    <h2 className="text-3xl font-bold text-gray-800 mb-6">Upcoming Events</h2>
+    {upcomingEvents.length > 0 ? (
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {upcomingEvents.map((event, index) => (
+          <a
+            key={index}
+            href="/conference"
+            className="block rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+          >
+            <EventCard {...event} />
+          </a>
+        ))}
+      </div>
+    ) : (
+      <p className="text-gray-600">No upcoming events</p>
+    )}
+  </section>
+
+
+  <section className="mt-20">
+    <h2 className="text-3xl font-bold text-gray-800 mb-6">Our Previous Events</h2>
+    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {previousEvents.map((event, index) => (
+        <a
+          key={index}
+          href="/events/sft2024"
+          className="block rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+        >
+          <EventCard {...event} />
         </a>
-        
-        
-      </div>
-      
-      <div className=" relative bg-gradient-to-b from-[#dd6952] to-[#CD5E49] py-16">
-      <div className="absolute inset-0">
-        <div 
-          className="absolute inset-0 bg-cover bg-center transform "
-          style={{ backgroundImage: `url(${BackgroundImage})` }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#dd6952]/70 via-[#CD5E49]/60 to-[#CD5E49]/90" />
-      </div>
-        <div className="relative container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left side - Event Info */}
-            <div className="text-white">
-              <h1 className="text-5xl font-extrabold mb-6">White Water Research Group Events</h1>
-              <p className="text-xl mb-8">Join us for groundbreaking research presentations, workshops, and networking opportunities.</p>
-              <div className="bg-white/10 rounded-lg p-6 backdrop-blur-sm">
-                <h2 className="text-2xl font-semibold mb-4">Why Attend?</h2>
-                <ul className="space-y-3">
-                  <li className="flex items-center">
-                    <svg className="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    Network with industry experts
-                  </li>
-                  <li className="flex items-center">
-                    <svg className="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    Learn about latest research
-                  </li>
-                  <li className="flex items-center">
-                    <svg className="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    Participate in workshops
-                  </li>
-                </ul>
+      ))}
+    </div>
+  </section>
+</div>
+
+        <div className=" relative bg-gradient-to-b from-[#dd6952] to-[#CD5E49] py-16">
+          <div className="absolute inset-0">
+            <div
+              className="absolute inset-0 bg-cover bg-center transform "
+              style={{ backgroundImage: `url(${BackgroundImage})` }}
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-[#dd6952]/70 via-[#CD5E49]/60 to-[#CD5E49]/90" />
+          </div>
+          <div className="relative container mx-auto px-4">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              {/* Left side - Event Info */}
+              <div className="text-white">
+                <h1 className="text-5xl font-extrabold mb-6">
+                  White Water Research Group Events
+                </h1>
+                <p className="text-xl mb-8">
+                  Join us for groundbreaking research presentations, workshops,
+                  and networking opportunities.
+                </p>
+                <div className="bg-white/10 rounded-lg p-6 backdrop-blur-sm">
+                  <h2 className="text-2xl font-semibold mb-4">Why Attend?</h2>
+                  <ul className="space-y-3">
+                    <li className="flex items-center">
+                      <svg
+                        className="w-6 h-6 mr-2"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                        />
+                      </svg>
+                      Network with industry experts
+                    </li>
+                    <li className="flex items-center">
+                      <svg
+                        className="w-6 h-6 mr-2"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                        />
+                      </svg>
+                      Learn about latest research
+                    </li>
+                    <li className="flex items-center">
+                      <svg
+                        className="w-6 h-6 mr-2"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                        />
+                      </svg>
+                      Participate in workshops
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className="bg-white p-8 rounded-lg shadow-xl">
+                <h3 className="text-2xl font-bold text-green-600 mb-6">
+                  Register for Upcoming Events
+                </h3>
+                <form
+                  className="space-y-6"
+                  onSubmit={(e) => e.preventDefault()}
+                >
+                  <div className="space-y-4">
+                    <div>
+                      <label
+                        htmlFor="recieversName"
+                        className="block text-gray-700 text-lg font-medium mb-2"
+                      >
+                        Full Name
+                      </label>
+                      <input
+                        id="recieversName"
+                        type="text"
+                        value={formData.recieversName}
+                        onChange={handleChange}
+                        className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#E07A5F] focus:border-[#E07A5F] outline-none transition-all"
+                        placeholder="Enter your full name"
+                      />
+                    </div>
+                    <div>
+                      <label
+                        htmlFor="recieversAddress"
+                        className="block text-gray-700 text-lg font-medium mb-2"
+                      >
+                        Street Address
+                      </label>
+                      <input
+                        id="recieversAddress"
+                        type="text"
+                        value={formData.recieversAddress}
+                        onChange={handleChange}
+                        className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#E07A5F] focus:border-[#E07A5F] outline-none transition-all"
+                        placeholder="Where should we Address this Letter To"
+                      />
+                    </div>
+                    <div>
+                      <label
+                        htmlFor="recieversAddress"
+                        className="block text-gray-700 text-lg font-medium mb-2"
+                      >
+                        City/State
+                      </label>
+                      <input
+                        id="recieversCity"
+                        type="text"
+                        value={formData.recieversCity}
+                        onChange={handleChange}
+                        className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#E07A5F] focus:border-[#E07A5F] outline-none transition-all"
+                        placeholder="Your City/State e.g Benin City, Edo State "
+                      />
+                    </div>
+                    <div>
+                      <label
+                        htmlFor="recieversTitle"
+                        className="block text-gray-700 text-lg font-medium mb-2"
+                      >
+                        Title
+                      </label>
+                      <input
+                        id="recieversTitle"
+                        type="text"
+                        value={formData.recieversTitle}
+                        onChange={handleChange}
+                        className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#E07A5F] focus:border-[#E07A5F] outline-none transition-all"
+                        placeholder="What should we call you (Sir, Madam, Dame, Dr e.t.c )"
+                      />
+                    </div>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={handleDownload}
+                    className="w-full bg-[#E07A5F] hover:bg-[#CD5E49] text-white font-bold py-3 px-4 rounded-md transition-colors duration-200 ease-in-out"
+                  >
+                    Download Invitation Letter
+                  </button>
+                </form>
               </div>
             </div>
-
-            <div className="bg-white p-8 rounded-lg shadow-xl">
-      <h3 className="text-2xl font-bold text-green-600 mb-6">
-        Register for Upcoming Events
-      </h3>
-      <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
-        <div className="space-y-4">
-          <div>
-            <label
-              htmlFor="recieversName"
-              className="block text-gray-700 text-lg font-medium mb-2"
-            >
-              Full Name
-            </label>
-            <input
-              id="recieversName"
-              type="text"
-              value={formData.recieversName}
-              onChange={handleChange}
-              className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#E07A5F] focus:border-[#E07A5F] outline-none transition-all"
-              placeholder="Enter your full name"
-            />
-          </div>
-          <div>
-            <label
-              htmlFor="recieversAddress"
-              className="block text-gray-700 text-lg font-medium mb-2"
-            >
-              Street Address
-            </label>
-            <input
-              id="recieversAddress"
-              type="text"
-              value={formData.recieversAddress}
-              onChange={handleChange}
-              className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#E07A5F] focus:border-[#E07A5F] outline-none transition-all"
-              placeholder="Where should we Address this Letter To"
-            />
-          </div>
-          <div>
-            <label
-              htmlFor="recieversAddress"
-              className="block text-gray-700 text-lg font-medium mb-2"
-            >
-              City/State
-            </label>
-            <input
-              id="recieversCity"
-              type="text"
-              value={formData.recieversCity}
-              onChange={handleChange}
-              className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#E07A5F] focus:border-[#E07A5F] outline-none transition-all"
-              placeholder="Your City/State e.g Benin City, Edo State "
-            />
-          </div>
-          <div>
-            <label
-              htmlFor="recieversTitle"
-              className="block text-gray-700 text-lg font-medium mb-2"
-            >
-              Title
-            </label>
-            <input
-              id="recieversTitle"
-              type="text"
-              value={formData.recieversTitle}
-              onChange={handleChange}
-              className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#E07A5F] focus:border-[#E07A5F] outline-none transition-all"
-              placeholder="What should we call you (Sir, Madam, Dame, Dr e.t.c )"
-            />
-          </div>
-        </div>
-        <button
-          type="button"
-          onClick={handleDownload}
-          className="w-full bg-[#E07A5F] hover:bg-[#CD5E49] text-white font-bold py-3 px-4 rounded-md transition-colors duration-200 ease-in-out"
-        >
-          Download Invitation Letter
-        </button>
-      </form>
-    </div>
           </div>
         </div>
       </div>
-
-   
-    </div>
-    <Footer/>
+      <Footer />
     </>
   );
 }

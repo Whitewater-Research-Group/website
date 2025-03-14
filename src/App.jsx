@@ -9,6 +9,8 @@ import PersonalizedInvitation from './components/Invitation';
 import AcademicProfile from './components/researchers/eddie';
 import StakeholderMeeting from './components/meeting/Join';
 import './App.css';
+import PublicationsPage from './pages/publications/Publications';
+import PublicationDetails from './pages/publications/pdds';
 
 function App() {
   return (
@@ -21,8 +23,11 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/letter" element={<PersonalizedInvitation />} />
+        <Route path="/publications"  element={<PublicationsPage />}/>
+        <Route path="/publications/pdds" element={<PublicationDetails />} />
         <Route path="*" element={<Navigate to="/" replace />} />
         <Route path="/researchers/eddie" element={<AcademicProfile />} />
+
         <Route path="/sft2024/join" element={<StakeholderMeeting />} />
       </Routes>
     </Router>
