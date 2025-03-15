@@ -9,7 +9,7 @@ const publications = [
     authors: "Edoghogho Olaye, Imonikosaye Omafovbe, Williams O. Aigbe, Daniel Obuh",
     journal: "International Conference on Digital Sovereignty (ICDS)",
     year: 2025,
-    link: "/publications/pdds",
+    link: "/publications/1",
   },
  
 ];

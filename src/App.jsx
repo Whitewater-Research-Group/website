@@ -24,7 +24,7 @@ function App() {
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/letter" element={<PersonalizedInvitation />} />
         <Route path="/publications"  element={<PublicationsPage />}/>
-        <Route path="/publications/pdds" element={<PublicationDetails />} />
+        <Route path="/publications/1" element={<PublicationDetails />} />
         <Route path="*" element={<Navigate to="/" replace />} />
         <Route path="/researchers/eddie" element={<AcademicProfile />} />
 
