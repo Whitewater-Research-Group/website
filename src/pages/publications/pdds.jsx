@@ -38,7 +38,6 @@ const publication = {
     "digital health surveillance",
     "healthcare records",
   ],
- 
 };
 
 const PublicationDetails = () => {
@@ -122,7 +121,6 @@ const PublicationDetails = () => {
 
         <div className="bg-white shadow-sm rounded-xl overflow-hidden border border-gray-100">
           <div className="p-6 sm:p-8">
-           
             <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 leading-tight">
               {publication.title}
             </h1>
@@ -171,14 +169,6 @@ const PublicationDetails = () => {
 
             {/* Action buttons */}
             <div className="mt-6 flex flex-wrap gap-3">
-              <a
-                href={publication.pdfLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition shadow-sm"
-              >
-                <FaFilePdf /> View PDF
-              </a>
               <button
                 onClick={() => setShowShareModal(true)}
                 className="flex items-center gap-2 bg-gray-100 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-200 transition"
@@ -197,14 +187,45 @@ const PublicationDetails = () => {
           <hr className="border-gray-200" />
 
           {/* Content Sections */}
+          {/* Content Sections */}
           <div className="p-6 sm:p-8">
-            {/* Abstract */}
+            {/* Research Achievements */}
             <div>
               <h2 className="text-xl sm:text-2xl font-semibold text-gray-800 mb-4">
-                
+                Our Research Achievements
               </h2>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                Our research team is dedicated to advancing data privacy in
+                health surveillance. We are proud to introduce the{" "}
+                <strong>
+                  Patients’ Personal Data Sovereignty System (PPDSS)
+                </strong>
+                , an innovative solution that protects sensitive patient
+                information at the point of collection.
+              </p>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                PPDSS is a <strong>Flutter-based Android application</strong>{" "}
+                that captures paper-based medical records using smartphone
+                cameras. It utilizes{" "}
+                <strong>AI-powered Optical Character Recognition (OCR)</strong>
+                to convert images into text while automatically masking
+                confidential data. This ensures privacy, ethical data use, and
+                enables meaningful insights for health surveillance.
+              </p>
               <p className="text-gray-700 leading-relaxed">
-                {publication.abstract}
+                Through this research, our team is tackling key challenges in
+                patient data security while harnessing {" "}
+                <strong>machine learning and mobile technology</strong> to
+                transform health data processing.
+              </p>
+              <p className="text-gray-700 leading-relaxed mt-4">
+                📖{" "}
+                <a
+                  href={publication.pdfLink}
+                  className="text-blue-600 hover:underline"
+                >
+                  Read our published paper here
+                </a>
               </p>
             </div>
 
@@ -224,8 +245,6 @@ const PublicationDetails = () => {
                 ))}
               </div>
             </div>
-
-            
           </div>
         </div>
       </div>
