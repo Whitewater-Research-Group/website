@@ -12,19 +12,19 @@ function About() {
       {
         id: 1,
         name: "Dr. E. Olaye",
-        role: "Principal Investigator",
+        role: "Principal Investigator / UNIBEN",
         specialty: "Research Leadership",
         image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrCLHZeA--7ckaEIUPD-Z0XASJ5BxYQYLsdA&s",
         bio: "Leading research initiatives in healthcare innovation with over 15 years of experience.",
-        email: "e.olaye@example.com",
+        email: "eddie.olaye@gmail.com",
         twitter: "@DrOlaye",
-        website: "example.com/dr-olaye"
+        website: "whitewaterresearch.com"
       },
       {
         id: 2,
         name: "Dr. Omorodion Irowa",
         role: "Surgeon",
-        specialty: "Surgical Sciences",
+        specialty: "Surgical Sciences / UNIBEN",
         image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrCLHZeA--7ckaEIUPD-Z0XASJ5BxYQYLsdA&s",
         bio: "Specializing in advanced surgical procedures and medical research.",
         email: "o.irowa@example.com",
