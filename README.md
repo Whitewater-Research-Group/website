@@ -81,4 +81,6 @@ Welcome to the WWRG website project! This guide provides instructions for develo
 - **Project Documentation**
 
   Refer to the project’s architecture for detailed information on project structure, development guidelines, and other relevant details.
+WWRG
+THIS PROJECT WAS UPDATED BY CRUX PDNIM
 
